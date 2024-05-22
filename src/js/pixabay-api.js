@@ -25,8 +25,6 @@ export function getImages(query) {
                 });
             }
 
-            loader.style.display = "none";
-
             return res.json();
         })
         .then(data => {
@@ -38,5 +36,8 @@ export function getImages(query) {
             }
 
             return data.hits;
+        })
+        .finally(() => {
+            loader.style.display = "none";
         })
 }

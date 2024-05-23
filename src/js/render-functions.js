@@ -1,10 +1,18 @@
 export function createTemplate(query) {
-    let imagesArr = "";
+  let imagesArr = '';
 
-    query.map((elem) => {
-        const { webformatURL, largeImageURL, tags, views, downloads, likes, comments } = elem;
+  query.map(elem => {
+    const {
+      webformatURL,
+      largeImageURL,
+      tags,
+      views,
+      downloads,
+      likes,
+      comments,
+    } = elem;
 
-        imagesArr += `<div class="item-gallery">
+    imagesArr += `<div class="item-gallery">
                 <a href="${largeImageURL}">
                     <img src="${webformatURL}" alt="${tags}">
                 </a>
@@ -27,7 +35,7 @@ export function createTemplate(query) {
                     </div>
                 </div>
             </div>`;
-    });
+  });
 
-    return imagesArr;
+  return imagesArr;
 }
